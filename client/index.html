@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="FoodParty">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>FoodParty</title>
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width">
+	    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Kalam:700,400,300' rel='stylesheet' type='text/css'>
+	    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+		<link href="styles/style.css" rel='stylesheet' type='text/css'>
+	</head>
+  	<body>
+	    <!--[if lt IE 10]>
+	      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	    <![endif]-->
+
+	    <div id="loader" ng-if="loading"><img src="styles/load.gif"/></div>
+
+	    <div id="page">
+
+                <div class="center">
+
+                    <div id="menu" class="menuBtns" ng-if="logged" ng-controller="TopBarController">
+
+                        <div class="col-xs-3" ui-sref="search"><div class="rootBtn topBtn btnColorMix">find party</div></div>
+                        <div class="col-xs-3" ui-sref="make"><div class="rootBtn topBtn btnColorMix">make party</div></div>
+                        <div class="col-xs-3" ui-sref="manage"><div class="rootBtn topBtn btnColorMix">your parties</div></div>
+                        <div class="col-xs-3 col-sm-2 col-sm-offset-1" ng-click="logout()"><div class="rootBtn topBtn btnColorMix">log out</div></div>
+
+                    </div>
+
+
+                    <div class="view container-fluid" >
+
+                        <div ui-view></div>
+
+                    </div>
+            </div>
+
+			
+
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-cookies.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+		<script src="services/module.js"></script>
+		<script src="services/constants.js"></script>
+		<script src="services/colorService.js"></script>
+        <script src="services/mainService.js"></script>
+	    <script src="controllers/topBarCtrl.js"></script>
+	    <script src="controllers/search.js"></script>
+	    <script src="controllers/make.js"></script>
+	    <script src="controllers/manage.js"></script>
+	    <script src="controllers/login.js"></script>
+	    <script src="controllers/event.js"></script>
+        <script src="controllers/editEvent.js"></script>
+
+
+    </body>
+</html>

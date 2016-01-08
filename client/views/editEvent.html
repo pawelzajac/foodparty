@@ -1,0 +1,73 @@
+<!--<input uib-datepicker-popup="{{format}}" ng-model="e.date" class="infoRight" disabled/>-->
+<div class="modal-header">
+
+</div>
+<div ng-init="init()" class="modal-body" style="background: inherit;">
+
+    <div class="singleRow">
+        <div class="label">Place</div>
+        <div class="rowContent">
+            <input class="form-control" ng-model="e.place"/>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Date</div>
+        <div class="rowContent">
+            <input class="form-control" type="text" show-button-bar="false" uib-datepicker-popup="yyyy/MM/dd" ng-model="e.date" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" ng-click="open($event)"/>
+        </div>
+        <uib-timepicker class="time" ng-model="e.date" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="false"></uib-timepicker>
+    </div>
+    <div class="singleRow">
+        <div class="label">Description</div>
+        <div class="rowContent">
+            <textarea class="form-control" rows="2" ng-model="e.desc" ></textarea>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Entry fee</div>
+        <div class="rowContent">
+            <input class="form-control" ng-model="e.fee"/>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Max. participants</div>
+        <div class="rowContent">
+            <input class="form-control" ng-model="e.max"/>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Min. participants</div>
+        <div class="rowContent">
+            <input class="form-control" ng-model="e.min"/>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Signed participants</div>
+        <div class="rowContent" ng-repeat="p in e.participants">
+            <div class="form-control">{{p.name}}({{p.email}})<span style="cursor:pointer" ng-click="removeParticipant(p)" class="glyphicon glyphicon-remove"></span></div>
+        </div>
+        <div class="rowContent" ng-if="!e.participants || e.participants.length == 0">
+            <div class="form-control">Nobody :(</div>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="singleRow" ng-repeat="c in e.comments">
+        <div class="label">BY {{c.author.name}}</div>
+        <div class="rowContent">
+            <div class="form-control">{{c.content}}<span style="cursor:pointer" ng-click="removeComment(c)" class="glyphicon glyphicon-remove"></span></div>
+        </div>
+    </div>
+    <div class="singleRow" ng-if="!e.comments || e.comments.length == 0">
+        <div class="rowContent">
+            <div class="label">No comments</div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-1 rootBtn" type="button" ng-click="cancel()">Cancel</div>
+        <div class="col-xs-4 col-xs-offset-2 rootBtn" type="button" ng-click="ok()">Save changes</div>
+    </div>
+</div>

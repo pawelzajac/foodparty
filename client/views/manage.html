@@ -1,0 +1,53 @@
+<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" ng-repeat="e in events">
+
+    <div class="listElement" style="margin-top:20px;">
+
+        <div class="elementTitle" ng-if="e.isParticipant">
+            Participated
+        </div>
+        <div class="elementTitle" ng-if="!e.isParticipant">
+            Created
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Place</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.place}}</div>
+            </div>
+        </div>
+        <div class="singleRow">
+            <div class="label">Time</div>
+            <div class="rowContent">
+                <div class="form-control">{{formatDate(e.date)}}</div>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Description</div>
+            <div class="rowContent">
+                <textarea class="form-control" rows="1">{{e.desc}}</textarea>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Entry fee</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.fee}}</div>
+            </div>
+        </div>
+
+        <div class="rootBtn infoBtn" ng-click="open(e)">Show more!</div>
+
+    </div>
+
+</div>
+
+<div class="col-xs-10 col-xs-offset-1" ng-if="events.length == 0">
+
+    <div class="listElement">
+
+        You do not participate in any events :(
+
+    </div>
+
+</div>

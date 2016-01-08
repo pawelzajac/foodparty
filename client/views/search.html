@@ -1,0 +1,107 @@
+<div class="col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0 ">
+
+    <div class="listElement">
+
+        <div class="elementTitle">
+            Find best <br>
+            <span class="smallTitle">
+                <span style="color:#9C27B0">F</span>
+                <span style="color:#FFEB3B">o</span>
+                <span style="color:#673AB7">o</span>
+                <span style="color:#FF9800">d</span>
+                <span>&nbsp</span>
+                <span style="color:#F44336">P</span>
+                <span style="color:#009688">a</span>
+                <span style="color:#4CAF50">r</span>
+                <span style="color:#BF360C">t</span>
+                <span style="color:#E91E63">y</span>
+            </span><br>
+            for you
+        </div>
+
+        <div class="singleRow">
+            <div class="label">From</div>
+            <div class="rowContent">
+                <input class="form-control text-center" type="text" show-button-bar="false" uib-datepicker-popup="yyyy/MM/dd" ng-model="dateFrom" is-open="status.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-click="open($event)"/>
+            </div>
+            <uib-timepicker class="time" ng-model="dateFrom" hour-step="hstep" minute-step="mstep" show-meridian="false"></uib-timepicker>
+            <!--<div class="rowContent">
+                <span ng-click="clear(dateFrom)" class="removeFilter glyphicon glyphicon-remove"></span>
+            </div>-->
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Until</div>
+            <div class="rowContent">
+                <input class="form-control text-center" type="text" show-button-bar="false" uib-datepicker-popup="yyyy/MM/dd" ng-model="dateTo" is-open="status.opened2" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-click="open2($event)"/>
+            </div>
+            <uib-timepicker class="time" ng-model="dateTo" hour-step="hstep" minute-step="mstep" show-meridian="false"></uib-timepicker>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Place</div>
+            <div class="rowContent">
+                <input class="form-control" type="text" ng-model="place"/>
+            </div>
+        </div>
+
+        <!--<div class="singleRow">
+            <div class="label">Min. rating</div>
+            <uib-rating class="form-control" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        </div>-->
+
+        <div class="rootBtn infoBtn" ng-click="searchEvents()">Search</div>
+
+    </div>
+</div>
+
+
+<div class="col-xs-10 col-xs-offset-1" ng-if="events.length == 0">
+
+    <div class="listElement">
+
+        There are no events with such parameters :(
+
+    </div>
+
+</div>
+
+
+<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" ng-repeat="e in events">
+
+    <div class="listElement">
+
+        <div class="singleRow">
+            <div class="label">Place</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.place}}</div>
+            </div>
+        </div>
+        <div class="singleRow">
+            <div class="label">Time</div>
+            <div class="rowContent">
+                <div class="form-control">{{formatDate(e.date)}}</div>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Description</div>
+            <div class="rowContent">
+                <textarea class="form-control" rows="2">{{e.desc}}</textarea>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Entry fee</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.fee}}</div>
+            </div>
+        </div>
+
+        <div class="rootBtn infoBtn" ng-click="openEvent(e)">Show more!</div>
+
+    </div>
+
+</div>
+
+

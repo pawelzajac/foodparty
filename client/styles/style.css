@@ -1,0 +1,417 @@
+html {
+    font-family: 'Kalam', cursive;
+}
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+    font-family: 'Kalam', cursive;
+}
+
+#loader {
+	background-color: rgba(255,255,255,1);
+	width:100vw;
+	height:100vh;
+	position: absolute;
+	z-index: 999;
+	top:0;
+	left:0;
+}
+#loader img {
+	display: block;
+	width:24px;
+	height:24px;
+	margin: 45vh auto;
+}
+
+
+.rootBtn {
+	padding:10px 0px;
+    border-width: 2px;
+	border-style: solid;
+	background: inherit;
+    border-color: inherit;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+.rootBtn:hover {
+	filter: brightness(120%) !important;
+}
+
+.modal-content {
+    border-radius: 0 !important;
+}
+
+
+@media (min-width: 800px) {
+    .menu {
+        width:800px !important;
+    }
+}
+
+
+
+.listElement {
+	border-width: 2px;
+	border-style: solid;
+	/*width:80%;*/
+	padding: 10px 10px;
+	background:white;
+	/*margin: 0 auto;*/
+	margin-bottom: 40px;
+    border-color: inherit;
+}
+
+.singleRow {
+    display:table;
+    margin-bottom:5px;
+    color:inherit;
+    border-color: inherit;
+    background: inherit;
+}
+
+.label {
+    display: table-cell;
+    color:inherit;
+    padding: 5px 5px;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 100% !important;
+    font-weight: 600;
+}
+
+.labelBtn {
+    display: table-cell;
+    color:inherit;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.line {
+    display: block;
+    width:100%;
+    height:20px;
+    margin-bottom:20px;
+    border-radius: 0;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 5px;
+    border-color: inherit;
+    border-style: double;
+}
+
+.form-control, .form-control[readonly] {
+    background: rgba(0,0,0,0);
+    color:inherit;
+    border-radius: 0;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    border-color: inherit;
+    box-shadow: none !important;
+    pointer-events: auto;
+    font-weight: 100 !important;
+}
+
+.form-control:active, .form-control:hover, .form-control:focus {
+    color:inherit !important;
+    border-color:inherit !important;
+    filter: brightness(140%) !important;
+}
+
+.btn-link, .btn-default, .btn-info {
+    color: inherit;
+    outline: none !important;
+    background: inherit;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-info .text-info {
+    color: inherit;
+}
+
+.btn-default .text-muted {
+    color: inherit;
+    filter: brightness(60%) !important;
+}
+
+.btn-link:active, .btn-link:hover, .btn-default:active, .btn-default:hover  {
+    color: inherit;
+    outline: none !important;
+    background: inherit;
+    filter: brightness(140%) !important;
+}
+
+.btn-info.active {
+    color: inherit !important;
+    outline: none !important;
+    background: inherit;
+    border-width: 1px !important;
+    border-color: inherit;
+    border-style: solid !important;
+    border-radius: 0 !important;
+}
+
+.btn-info.active:hover {
+    color: inherit;
+    outline: none !important;
+    background: inherit;
+    filter: brightness(140%) !important;
+}
+
+.btn-link {
+    padding: 0px 18px !important;
+}
+
+.dropdown-menu {
+    color:inherit !important;
+    border-color:inherit !important;
+    background: inherit;
+    border-radius: 0 !important;
+    border-width: 2px;
+}
+
+
+
+.rowContent {
+    color:inherit;
+    display: table-cell;
+    vertical-align: middle;
+    background: inherit;
+}
+
+.date {
+    white-space: nowrap;
+    width:100%;
+}
+
+.time {
+    display: table-cell !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding-left:5px;
+}
+
+.removeFilter {
+    cursor:pointer;
+    color:inherit;
+    margin-left:5px;
+}
+
+.removeFilter:hover {
+    filter: brightness(140%) !important;
+}
+
+
+.info {
+	display:table;
+	/*width:100%;*/
+	margin-bottom:5px;
+
+}
+.infoLeft {
+	display: table-cell;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	background: black;
+	color:white;
+	padding: 5px 5px;
+	width: 1%;
+	white-space: nowrap;
+	vertical-align: middle;
+
+}
+.infoRight {
+	display: table-cell;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	/*border-color: black;
+	background: white;*/
+	padding: 5px 5px;
+	width:100%;
+}
+.infoBtn {
+	float: right;
+    width:100%;
+}
+
+.center {
+	max-width: 800px;
+	min-width: 320px;
+    height:100%;
+	margin: 0 auto;
+    background-color: inherit;
+    /*background-image: url("http://horriblehousewife.com/wp-content/uploads/2014/01/Football-party-idea-Easy-party-food-football-decorations-and-more-onebuyforall-shop-cbias.jpg");
+    background-image: url("http://wallpapercave.com/wp/QisNer5.png");
+    background-image: url("http://wallpaperswide.com/download/colorful_pixels-wallpaper-1280x800.jpg") ;
+    background-image: url("http://www.pageresource.com/wallpapers/wallpaper/leopard-print-colorful-pattern-twitter.jpg") ;
+    background-image: url("http://orig01.deviantart.net/90d4/f/2015/063/4/6/colorful_flat_city_buildings_by_superawesomevectors-d8kd5j1.jpg");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    border-width: 2px 2px 0px 2px;
+    border-color: inherit;
+    border-style: solid;*/
+}
+
+#page {
+	width:100vw;
+	height:100vh;
+    padding-top: 20px;
+    background-image: url("http://orig01.deviantart.net/90d4/f/2015/063/4/6/colorful_flat_city_buildings_by_superawesomevectors-d8kd5j1.jpg");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.view {
+	overflow: visible;
+	height:100%;
+    padding-top:50px;
+	z-index: 5;
+	overflow-x:hidden;
+}
+
+#menuTop {
+	display:table;
+	table-layout: fixed;
+	width: 100%;
+	position:fixed;
+	top:0;
+	z-index: 10;
+
+}
+
+.modal-header {
+	border-bottom: none !important;
+}
+
+.modal-footer {
+	border-top: none !important;
+}
+
+.modal-content {
+	border-width: 2px;
+	border-radius: 10px;
+}
+
+#eventButtonRow {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	height:40px;
+}
+
+.eventRowButton {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 40px;
+}
+
+.title {
+    margin-left:11px;
+    font-size:35px;
+    width:100%;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0px 0px 15px, 0px 0px 10px rgba(255,255,255,0.2), 0px 0px 2px rgba(0,0,0,0.8);
+}
+
+.title span {
+    margin-left:-11px;
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size:25px; !important;
+    }
+    #page {
+        font-size:11px;
+    }
+    .form-control {
+        font-size:11px;
+    }
+    .label {
+        font-size:11px;
+    }
+}
+
+.subtitle {
+    font-size:15px;
+    width:100%;
+    text-align: center;
+    font-weight: 100;
+}
+
+.elementTitle {
+    font-size:20px;
+    text-align: center;
+    width:80%;
+    border-style: solid;
+    border-color: inherit;
+    border-width: 2px;
+    margin: -25px auto 0px auto;
+    background-color: inherit;
+}
+
+.smallTitle {
+    margin-left:8px;
+    width:100%;
+    font-size:25px;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px, 0px 0px 5px rgba(255,255,255,0.2), 0px 0px 2px rgba(0,0,0,0.8);
+}
+
+.smallTitle span {
+    margin-left:-8px;
+}
+
+.menuBtns{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 99;
+    max-width: 800px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+#menu {
+    border-width: 2px;
+    border-style: solid;
+    border-top-width: 0px;
+    height:30px;
+
+}
+
+
+@media (max-width: 480px) {
+    .col-xs-3 {
+        padding: 0 !important;
+    }
+}
+
+.topBtn{
+    border-top: 0px;
+
+}

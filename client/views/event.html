@@ -1,0 +1,98 @@
+<!--<input uib-datepicker-popup="{{format}}" ng-model="e.date" class="infoRight" disabled/>-->
+<div class="modal-header">
+    <div id="eventButtonRow">
+        <div class="eventRowButton col-xs-4" ng-if="isCreator">
+            <div class="rootBtn" ng-click="edit()" >Edit</div>
+        </div>
+        <!--<div class="eventRowButton col-xs-4" ng-if="isParticipant || isCreator">
+            <div class="rootBtn" ng-click="share()">Share link</div>
+        </div>-->
+        <div class="eventRowButton col-xs-4" ng-if="!isParticipant && !isCreator">
+            <div class="rootBtn" ng-click="participate()">Participate</div>
+        </div>
+        <div class="eventRowButton col-xs-4" ng-if="isParticipant">
+            <div class="rootBtn" ng-click="leave()">Leave</div>
+        </div>
+        <div class="eventRowButton col-xs-4" ng-if="isCreator">
+            <div class="rootBtn" ng-click="remove()">Cancel event</div>
+        </div>
+    </div>
+</div>
+<div ng-init="init()" class="modal-body">
+
+
+    <div class="singleRow">
+        <div class="label">Place</div>
+        <div class="rowContent">
+            <div class="form-control">{{e.place}}</div>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Time</div>
+        <div class="rowContent">
+            <div class="form-control">{{formatDate(e.date)}}</div>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Description</div>
+        <div class="rowContent">
+            <textarea class="form-control" rows="1">{{e.desc}}</textarea>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Entry fee</div>
+        <div class="rowContent">
+            <div class="form-control">{{e.fee}}</div>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Max. participants</div>
+        <div class="rowContent">
+            <div class="form-control">{{e.max}}</div>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Min. participants</div>
+        <div class="rowContent">
+            <div class="form-control">{{e.min}}</div>
+        </div>
+    </div>
+    <div class="singleRow">
+        <div class="label">Signed participants</div>
+        <div class="rowContent" ng-if="e.participants && e.participants.length > 0">
+            <div class="form-control">{{e.participants.length}}</div>
+        </div>
+        <div class="rowContent" ng-if="!e.participants || e.participants.length == 0">
+            <div class="form-control">0</div>
+        </div>
+    </div>
+    <!--ng-model="e.creator.rank"-->
+    <div class="singleRow">
+        <div class="label">Creator</div>
+        <div class="rowContent">
+            <div class="form-control">{{e.creator.name}}<!--<uib-rating ng-model="5" max="10" readonly="true"></uib-rating>--></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="singleRow">
+        <div class="rowContent">
+            <input type="text" ng-model="comment" class="form-control" placeholder="Write your comment"/>
+        </div>
+        <div class="labelBtn"><button style="padding:5px 10px;" class="rootBtn" ng-click="sendComment()">Send</button></div>
+    </div>
+
+    <div class="singleRow" ng-repeat="c in e.comments">
+        <div class="label">BY {{c.author.name}}</div>
+        <div class="rowContent">
+            <div class="form-control">{{c.content}}</div>
+        </div>
+    </div>
+    <div class="singleRow" ng-if="!e.comments">
+        <div class="rowContent">
+            <div class="label">No comments yet</div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="rootBtn infoBtn" type="button" ng-click="ok()">GO BACK</button>
+</div>

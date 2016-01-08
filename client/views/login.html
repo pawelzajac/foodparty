@@ -1,0 +1,151 @@
+<div ng-init="init()" style="margin-top:-40px;">
+    <div ng-if="!register" class="col-sm-8 col-sm-offset-2" style="margin-top:10px;">
+
+        <div class="listElement">
+            <div class="elementTitle">
+                <div class="title">
+                    <span style="color:#9C27B0">F</span>
+                    <span style="color:#FFEB3B">o</span>
+                    <span style="color:#673AB7">o</span>
+                    <span style="color:#FF9800">d</span>
+                    <span>&nbsp</span>
+                    <span style="color:#F44336">P</span>
+                    <span style="color:#009688">a</span>
+                    <span style="color:#4CAF50">r</span>
+                    <span style="color:#BF360C">t</span>
+                    <span style="color:#E91E63">y</span>
+                </div>
+                <div class="subtitle">
+                    food lovers society
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="singleRow">
+                        <div class="label">Email</div>
+                        <div class="rowContent">
+                            <input type="text" class="form-control" ng-model="user.email"/>
+                        </div>
+                    </div>
+                    <div class="singleRow">
+                        <div class="label">Password</div>
+                        <div class="rowContent">
+                            <input type="password" class="form-control" ng-model="user.password"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="ifError" class="alert alert-danger" role="alert">{{errorMsg}}</div>
+
+            <div class="col-sm-4 col-sm-offset-1 col-xs-6 rootBtn btnColorMix" ng-click="openRegister()">Register!</div>
+            <div class="col-sm-4 col-sm-offset-2 col-xs-6 rootBtn btnColorMix" ng-click="loginn()">Log in!</div>
+        </div>
+    </div>
+
+    <div ng-if="register" class="col-xs-8 col-xs-offset-2" style="margin-top:10px;">
+        <div class="listElement">
+            <div class="elementTitle">
+                <div class="title">
+                    <span style="color:#9C27B0">F</span>
+                    <span style="color:#FFEB3B">o</span>
+                    <span style="color:#673AB7">o</span>
+                    <span style="color:#FF9800">d</span>
+                    <span>&nbsp</span>
+                    <span style="color:#F44336">P</span>
+                    <span style="color:#009688">a</span>
+                    <span style="color:#4CAF50">r</span>
+                    <span style="color:#BF360C">t</span>
+                    <span style="color:#E91E63">y</span>
+                </div>
+                <div class="subtitle">
+                    food lovers society
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="singleRow">
+                        <div class="label">Email</div>
+                        <div class="rowContent">
+                            <input type="email" class="form-control" ng-model="user.email"/>
+                        </div>
+                    </div>
+                    <div class="singleRow">
+                        <div class="label">Password</div>
+                        <div class="rowContent">
+                            <input type="password" class="form-control" ng-model="user.password"/>
+                        </div>
+                    </div>
+                    <div class="singleRow">
+                        <div class="label">Repeat password</div>
+                        <div class="rowContent">
+                            <input type="password" class="form-control" ng-model="user.password2"/>
+                        </div>
+                    </div>
+                    <div class="singleRow">
+                        <div class="label">Username</div>
+                        <div class="rowContent">
+                            <input type="text" class="form-control" ng-model="user.name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="ifError" class="alert alert-danger" role="alert">{{errorMsg}}</div>
+
+            <div class="col-sm-4 col-sm-offset-1 col-xs-6 rootBtn btnColorMix" ng-click="closeRegister()">Log in!</div>
+            <div class="col-sm-4 col-sm-offset-2 col-xs-6 rootBtn btnColorMix" ng-click="registerr()">Register!</div>
+        </div>
+
+    </div>
+</div>
+
+<div class="col-xs-6 col-xs-offset-3" style="margin-bottom:-50px;z-index:10;">
+
+    <div class="listElement">
+
+        <div style="width:100%;text-align: center;font-size:20px">
+            Nearby parties
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0" ng-repeat="e in events">
+
+    <div class="listElement">
+
+        <div class="singleRow">
+            <div class="label">Place</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.place}}</div>
+            </div>
+        </div>
+        <div class="singleRow">
+            <div class="label">Time</div>
+            <div class="rowContent">
+                <div class="form-control">{{formatDate(e.date)}}</div>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Desc.</div>
+            <div class="rowContent">
+                <textarea class="form-control" rows="2">{{e.desc}}</textarea>
+            </div>
+        </div>
+
+        <div class="singleRow">
+            <div class="label">Entry fee</div>
+            <div class="rowContent">
+                <div class="form-control">{{e.fee}}</div>
+            </div>
+        </div>
+
+        <div class="rootBtn infoBtn">Log in to see more!</div>
+
+    </div>
+
+</div>
+
+
